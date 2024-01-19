@@ -9,8 +9,8 @@ var queueUrlResponse = await sqsClient.GetQueueUrlAsync("customers");
 var receiveMessageRequest = new ReceiveMessageRequest
 {
     QueueUrl = queueUrlResponse.QueueUrl,
-    AttributeNames = new List<string>{ "All" },
-    MessageAttributeNames = new List<string>{ "All" }
+    AttributeNames = new List<string>{ "All" }, // optionally can be inclueded 
+    MessageAttributeNames = new List<string>{ "All" } // optionally can be inclueded 
 };
 
 while (!cts.IsCancellationRequested)

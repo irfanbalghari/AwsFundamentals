@@ -18,7 +18,8 @@ var customer = new CustomerCreated
 var queueUrlResponse = await sqsClient.GetQueueUrlAsync("customers");
 
 var sendMessageRequest = new SendMessageRequest
-{
+{ 
+    //"https://sqs.us-east-1.amazonaws.com/041272522723/Customers",
     QueueUrl = queueUrlResponse.QueueUrl,
     MessageBody = JsonSerializer.Serialize(customer),
     MessageAttributes = new Dictionary<string, MessageAttributeValue>
